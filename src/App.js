@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import SinhVien from './components/SinhVien/SinhVien'
 
+class App extends Component{
+  render(){
+    return(
+      <div className="App">
+        <h1>Ứng dụng react đầu tiên</h1>
+        <p>Đến từ Nguyễn Thị Diệu Ái</p>
+        <SinhVien hoten='Nguyễn Thị Tẹo' tuoi='35'>
+          Sở thích: Bóng đá, chơi game, ăn vặt, ngủ nướng,.....
+        </SinhVien>
+        <SinhVien hoten='Nguyễn Thị Téo' tuoi='37'>
+          Sở thích: Kẹo mút
+        </SinhVien>
+        <SinhVien hoten='Nguyễn Thị Teo' tuoi='39'/>
+      </div>
+    );
+  }
+}
 export default App;

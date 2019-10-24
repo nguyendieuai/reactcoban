@@ -1,21 +1,57 @@
 import React, {Component} from 'react';
 import './App.css';
 
-import SanPham from './components/SanPham/SanPham.js'
+import SinhVien from './components/SinhVien/SinhVien.js'
 
 class App extends Component{
+  state ={
+    sinhVien :[
+      { hoten:'Nguyễn Thị Tẹo', tuoi: 35, sothich:'Ngủ nướng'},
+      { hoten:'Nguyễn Thị Teo', tuoi: 37, sothich:'Ăn vặt'},
+      { hoten:'Nguyễn Thị Téo', tuoi: 39, sothich:'Không'}
+    ],
+    lop : 'Lập trình Reactjs'
+  }
+  
+  xulyCapNhat = () => {
+    this.setState(
+      {
+        sinhVien:[
+          { hoten:'Nguyễn Thị Tẹo', tuoi: 35, sothich:'Ngủ nướng'},
+          { hoten:'Nguyễn Thị Teo', tuoi: 36, sothich:'Ăn vặt'},
+          { hoten:'Nguyễn Thị Téo', tuoi: 39, sothich:'Không'}
+        ],
+        lop: 'Lâp trình ReactJS'
+      }
+    );
+  }
+
   render(){
     return(
       <div className="App">
-        <h1>Bảng giá sản phẩm</h1>
-        <SanPham masanpham="123" tensanphan="ghế" gia="1.200.000"></SanPham>
-        <SanPham masanpham="124" tensanphan="bàn" gia="2.000.000"></SanPham>
-        <SanPham masanpham="125" tensanphan="đèn bàn" gia="1.000.000"></SanPham>
-        <SanPham masanpham="126" tensanphan="hoa" gia="100.000"></SanPham>
-        <SanPham masanpham="127" tensanphan="sofa" gia="7.000.000"></SanPham> */}
+        <h1>Ứng dụng react đầu tiên</h1>
+        <p>Đến từ Nguyễn Thị Diệu Ái</p>
+        <button onClick = {this.xulyCapNhat}>
+          Cập nhật
+        </button>
+
+        <SinhVien 
+        hoten={this.state.sinhVien[0].hoten} 
+        tuoi={this.state.sinhVien[0].tuoi}>
+          Sở thích: {this.state.sinhVien[0].sothich}
+        </SinhVien>
+        <SinhVien 
+        hoten={this.state.sinhVien[1].hoten} 
+        tuoi={this.state.sinhVien[1].tuoi}>
+          Sở thích: {this.state.sinhVien[1].sothich}
+        </SinhVien>
+        <SinhVien 
+        hoten={this.state.sinhVien[1].hoten} 
+        tuoi={this.state.sinhVien[1].tuoi}>
+          Sở thích: {this.state.sinhVien[1].sothich}
+        </SinhVien>
       </div>
     );
   }
 }
-
 export default App;
